@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    {% block css %}
+        {{ include('base.css.twig') }}
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <i class="fa fa-map-marker"></i> 28 JACKSON BLVD STE 1020CHICAGO
+                </div>
+                <div class="col-md-6 text-right">
+                    <i class="fa fa-plus"></i> 800 8798 3029 29482
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="{{ path('app_default_index') }}"><img class="img-responsive" src="{{ asset('img/logo.png') }}" alt="0"></a>
+                </div>
+                <div class="col-md-9">
+                    <ul id="nav" class="list-inline">
+                        <li><a href="{{ path('app_default_index') }}">home</a></li>
+                        <li><a href="{{ path('app_default_about') }}">about</a></li>
+                        <li><a href="#">menu</a></li>
+                        <li><a href="#">menu</a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ block('slider') }}
+
+    <div id="content">
+        <div class="container">
+            <h1>{{ block('title') }}</h1>
+            {{ block('body') }}
+        </div>
+    </div>
+
+    <div id="prefooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>WHO WE FIGHT AGAINST</h2>
+                    <p><strong>lorem ipsum solum vitae</strong></p>
+                    <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue. In erat lacus, vestibulum quis pulvinar a, placerat sed tortor. Proin pellentesque nibh nulla.</p>
+                    <p><a class="btn btn-default" href="#">more</a></p>
+                </div>
+                <div class="col-md-6">
+                    <h2>COMMUNITY COMMITMENT</h2>
+                    <p><strong>lorem ipsum solum vitae</strong></p>
+                    <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue. In erat lacus, vestibulum quis pulvinar a, placerat sed tortor. Proin pellentesque nibh nulla.</p>
+                    <p><a class="btn btn-default" href="#">more</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+           <small>&copy; {{ 'now'|date('Y') }} Animadou. All rights reserved.</small>
+        </div>
+    </div>
+    {% block js %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    {% endblock %}
+</body>
+</html>
